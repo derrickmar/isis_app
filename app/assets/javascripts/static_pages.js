@@ -22,5 +22,9 @@
             return false;
         });
         $('.facts-parent').css('height', $('#dv-block4').height());
+
+        // $('.email-btn').on("click", function() {
+            
+        // })
     });
 }(window.jQuery, window, document));
