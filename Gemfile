@@ -31,6 +31,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'skrollr-rails'
 
 gem 'rails_12factor', group: :production
+gem 'pg', group: :production
 # gem 'client_side_validations', github: "bcardarella/client_side_validations", :branch => "4-0-beta"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
