@@ -1,0 +1,180 @@
+$font-stack: 'Open Sans', sans-serif;
+//$primary-color: #006699;
+$primary-color: #33CCFF;
+$product-circle-size: 200px;
+$box-shadow-color: #464646;
+
+@mixin primary-color-opacity($op) {
+	background-color: rgba(0, 102, 153, $op)
+}
+
+/* overaching styles */
+body {
+	font-family: $font-stack;
+	color: $primary-color;
+	font-size: 18px;
+}
+
+h1 {
+	font-size: 26px;
+	text-align: center;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.container-fluid {
+	padding: 0;
+}	
+
+#spree-footer {
+	margin: 0;
+}
+
+.title {
+	font-size: 120px;
+	padding: 20px 0px;
+	width: 100%;
+	height: auto;
+//	background-image: image-url('color3.jpeg');
+//	-webkit-background-size: 100% 100%, auto;
+//	background-position: center center;
+//	background-repeat: no-repeat;
+//		background-color: $primary-color;
+//	border-bottom: 2px solid black;
+	box-shadow: -1px 0px 0px $box-shadow-color;
+}
+
+// temperature styles
+.temperature-bar {
+	position: relative;
+	height: 20px;
+	border-radius: 10px;
+	@include primary-color-opacity(0.25);
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.middle, .right {
+	background-color: #bfd8e5 !important;
+}
+
+.temp-steps-title {
+	display: table;
+	margin: 0 auto;
+	position: relative;
+	top: -40px;
+}
+
+.circle-steps {
+	position: relative;
+	top: -35px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: $primary-color;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	margin: 0 auto;
+}
+
+
+/* PRODUCT-HOLDER HOMEPAGE STYLES */
+.product-holder {
+	position: relative;
+	height: $product-circle-size;
+	// height: 100%;
+}
+
+/* center symbols and t-shirt */
+.t-shirt {
+	height: 190px;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.symbol {
+	height: 160px;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.product-circle {
+	position: relative;
+	height: $product-circle-size;
+	width: $product-circle-size;
+	border-radius: 50%;
+	border: 1px solid $primary-color;
+	display: block;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.product-circle.blue {
+	background-color: $primary-color;
+	// @include primary-color-opacity(0.5);
+	// border: none;
+}
+
+.symbol-back {
+	position: absolute !important;
+	top: 0px;
+	// bottom: $product-circle-size;
+	display: none;
+}
+
+.cause-name {
+	text-align: center;
+	font-weight: 700;
+	margin-top: 15px;
+}
+
+/** Slider styles */
+//.banner { position: relative; overflow: auto; }
+//.banner li { list-style: none; }
+//.banner ul li { float: left; }
+
+
+/* entire container, keeps perspective */
+// .flip-container {
+// 	perspective: 1000;
+// }
+
+// /* flip the pane when hovered */
+// .flip-container:hover .flipper {
+// 	transform: rotateY(180deg);
+// }
+
+// .flip-container, .front, .back {
+// 	width: $product-circle-size;
+// 	height: $product-circle-size;
+// }
+
+// /* flip speed goes here */
+// .flipper {
+// 	transition: 0.6s;
+// 	transform-style: preserve-3d;
+// 	position: relative;
+// }
+
+// /* hide back of pane during swap */
+// .front, .back {
+// 	backface-visibility: hidden;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// }
+
+// /* front pane, placed above back */
+// .front {
+// 	z-index: 2;
+// }
+
+// /* back, initially hidden pane */
+// .back {
+// 	transform: rotateY(180deg);
+// }

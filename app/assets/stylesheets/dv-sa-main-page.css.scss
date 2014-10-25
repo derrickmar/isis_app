@@ -1,0 +1,371 @@
+$spree-header-height: 71px;
+$dv-primary-color: #33A0FF;
+$one-in-four-outline: 2px;
+
+@mixin font-styles($weight, $style) {
+	font-weight: $weight;
+	font-style: $style;
+}
+
+// TODO: Share mixins across scss files?
+@mixin transition($method, $s, $type) {
+	-webkit-transition: $method $s $type;
+	-moz-transition: $method $s $type;
+	-ms-transition: $method $s $type;
+	-o-transition: $method $s $type;
+}
+
+.row {
+	margin: 0;
+}
+
+.main-cause-holder {
+	@include font-styles(300, normal);
+	color: $dv-primary-color;
+}
+
+.main-cause-blocks {
+	margin: 0;
+	padding: 30px 0;
+}
+
+.main-cause-headers-of-blocks-small {
+	position: relative;
+	font-size: 48px;
+	@include font-styles(300, italic);
+}
+
+.main-cause-headers-of-blocks-large {
+	font-size: 72px;
+	@include font-styles(300, italic);
+}
+
+.header-facts {
+	text-align: left;
+	position: relative;
+	left: 60px;
+}
+
+.vcenter {
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
+
+//============= ERROR STYLES
+
+label.message {
+	display: none;
+}
+
+#error_explanation {
+	font-size: 14px;
+	background-color: black;
+//	color: white;
+	border-radius: 5px;
+	padding: 0 10px 5px 10px;
+	margin-bottom: 10px;
+}
+
+.error-bullet {
+	font-size: 22px;
+	font-weight: 700;
+	position: relative;
+	top: 3px;
+}
+
+// END OF ERROR STYLES
+
+//http://stackoverflow.com/questions/17134929/overlay-a-background-image-with-an-rgba-background-color
+#dv-block1 {
+	//	background:  linear-gradient(
+	//		rgba(255,255,255, 0.8),
+	//		rgba(255,255,255, 0.8)
+	//		);
+	//	background-image: image-url("dv-main.jpg") no-repeat 0 0;
+	background:  linear-gradient(
+		rgba(255,255,255, 0.9),
+		rgba(255,255,255, 0.9)
+		),
+	image-url("design.jpg") no-repeat 0 0;
+	height: calc(100vh - 71px);
+	width: auto;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.eluci-info-holder {
+	opacity: 0;
+	@include transition(opacity, 1000ms, ease);
+}
+
+
+
+.join-form {
+	.control-label {
+		font-size: 18px;
+		font-weight: 300;
+	}
+	.btn-default {
+		background-color: $dv-primary-color;
+		color: white;
+	}
+}
+
+.email-btn {
+	background-color: $dv-primary-color;
+	color: white;
+}
+
+.big-date {
+	font-size: 28px;
+	font-weight: 700;
+}
+
+
+// TODO: how to include css only if javascript exists
+.maincause-header {
+	font-size: 18px;
+	@include font-styles(300, italic);
+}
+
+.block1-content {
+	display: inline-block;
+	margin: 0px 60px;
+	position: absolute;
+}
+
+.maincause-sub-header {
+	display: inline-block;
+	color: black;
+	font-size: 28px;
+	@include font-styles(700, italic);
+}
+
+.maincause-sub-header-underline {
+	background-color: rgba(0, 0, 0, 0.8);
+	-webkit-transform: skew(-10deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	width: 100%;
+	height: 3px;
+}
+
+//.maincause-header {
+//	font-size: 100px;
+//	text-align: left;
+//	line-height: 120px;
+//	@include font-styles(300, italic);
+//}
+
+#dv-block2 {
+	background-color: black;
+	height: auto;
+	position: relative;
+
+	.whatis-desc-holder {
+		margin-top: 50px;
+		padding-bottom: 40px;
+	}
+
+	.dv-whatis-desc {
+		text-align: center;
+
+		.whatis-desc-header {
+			font-size: 24px;
+			margin: 40px 0px 20px 0px;
+			display: inline-block;
+			@include font-styles(300, italic);
+		}
+
+		.whatis-desc {
+			color: rgb(230,230,230);
+			font-size: 16px;
+		}
+	}
+
+}
+
+.team-pics {
+	width: 150px;
+	height: auto;
+}
+
+.facts-parent {
+	position: relative;
+	height: calc(100vh - 71px);
+}
+
+#dv-block3 {
+	background:  linear-gradient(
+		rgba(255,255,255, 0.8),
+		rgba(255,255,255, 0.8)
+		),
+	image-url("dv-main2.jpg") no-repeat 0 0;
+	height: calc(100vh - 71px);
+	width: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	position: fixed;
+	top: 69px;
+	//	color: black;
+	z-index: -1;
+	//	top: -100px; // this value is the because of skollr moving #dv-block2
+}
+
+#dv-block4 {
+	color: black;
+	position: absolute;
+	top: 0px;
+	padding: 0px 60px;
+}
+
+.join-scroll {
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+
+.today-timeline {
+	padding: 15px 20px;
+	border: 3px solid black;
+}
+
+
+.facts-holder {
+	a {
+		color: $dv-primary-color;
+//		text-decoration: none;
+	}
+
+	font-size: 24px;
+	margin: 50px 0px;
+	.facts-row {
+		padding: 0 60px;
+		margin-bottom: 40px;
+	}
+
+	.facts-highlight {
+		font-size: 28px;
+		color: $dv-primary-color;
+	}
+
+	.facts-big-text {
+		text-align: center;
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 1.2em;
+		div {
+			float: right;
+		}
+	}
+
+	.facts-box {
+		font-size: 16px;
+		text-align: center;
+		padding: 16px; 
+		border: 5px $dv-primary-color solid;
+	}
+
+	.facts-image {
+		width: 70%;
+		height: auto;
+		display: block;
+		margin: auto;
+		float: right;
+	}
+
+	#greaterthan {
+		font-weight: 700;
+		font-size: 150px;
+		line-height: 100%;
+		text-align: center;
+	}
+
+	.facts-full-length-statement {
+		font-size: 36px;
+		text-align: center;
+	}
+
+	.inline-num-circle {
+		display: inline-block;
+		border-radius: 50%;
+		border: 5px solid $dv-primary-color;
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 1.2em;
+		width: 67px;
+		position: relative;
+		top: 5px;
+	}
+
+	#one-in-four-box {
+		height: 200px;
+	}
+
+	.diamond {
+		width: 0;
+		height: 0;
+		border: 50px solid transparent;
+		border-bottom-color: black;
+		position: absolute;
+		font-size: 36px;
+	}
+	.diamond:after {
+		content: '';
+		position: absolute;
+		left: -50px;
+		top: 50px;
+		width: 0;
+		height: 0;
+		border: 50px solid transparent;
+		border-top-color: black;
+	}
+	.diamond-isolated {
+		span {
+			color: white;
+			position: relative;
+			top: 23px;
+			z-index: 1;
+			left: -9px;
+		}
+	}
+	.diamond-left {
+		left: 115px;
+		border-bottom-color: transparent;
+		&:after {
+			border-top-color: transparent;
+		}
+		span {
+			color: black;
+			position: relative;
+			top: 23px;
+			z-index: 1;
+			left: -15px;
+		}
+	}
+	.diamond-right{
+		left: 215px + $one-in-four-outline;
+		span {
+			color: white;
+			position: relative;
+			top: 23px;
+			z-index: 1;
+			left: -9px;
+		}
+	}
+	.diamond-top {
+		top: -50px - $one-in-four-outline;;
+		left: 165px;
+	}
+	.diamond-bottom {
+		left: 165px;
+		bottom: 50px - $one-in-four-outline;
+	}
+
+	#facts-desc-right {
+		text-align: right;
+		font-size: 32px;
+	}
+}

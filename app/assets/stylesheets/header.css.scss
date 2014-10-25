@@ -1,0 +1,226 @@
+$font-stack: 'Open Sans', sans-serif;
+$primary-color: #006699;
+$top-rect-height: 10px;
+$bottom-rect-height: 40px;
+$border-color: #131313;
+$header-border-style: 1px solid $border-color;
+$navbar-bg-color: #303030;  
+$text-color: #e7e7e7;
+$subnav-bg-color: #262626;
+$box-shadow-color: #464646;
+
+/** Media queries */
+$screen-md-min: 992px;
+
+@mixin transition($method, $s, $type) {
+  -webkit-transition: $method $s $type;
+  -moz-transition: $method $s $type;
+  -ms-transition: $method $s $type;
+  -o-transition: $method $s $type;
+  transition: $method $s $type;
+}
+
+body {
+  margin-top: 70px;
+}
+
+#logo {
+  height: 40px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+// header media query for mobile devices
+// display none on subnav
+@media (max-width: $screen-md-min) {
+  .navbar {
+    height: 70px;
+    margin-bottom: 0px;
+    background-color: $navbar-bg-color;
+    font-size: 14px;
+    color: $text-color;
+    font-weight: 600;
+    border: none;
+
+    .container-header {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      border-bottom: $header-border-style;
+
+      .navbar-toggle {
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 0 5px !important;
+        z-index: 1;
+      }
+
+      .navbar-nav {
+        margin: 0;
+
+        li {
+          border-bottom: 1px solid $border-color;
+          border-top: 1px solid $box-shadow-color;  
+          a {
+           color: $text-color;
+           background-color: $subnav-bg-color;
+           @include transition(background, 0.25s, linear);
+           &:hover {
+            background-color: #525252 !important;
+          }   
+        }
+      }
+    }
+
+    .navbar-collapse {
+      border-top: 1px solid $border-color;
+      text-align: center;
+    }
+  }
+}
+}
+// start media query for medium and large desktops
+@media (min-width: $screen-md-min) {
+  .navbar {
+    margin-bottom: 0px;
+    background-color: $navbar-bg-color;
+    font-size: 14px;
+    color: $text-color;
+    font-weight: 600;
+    border: none;
+
+
+    .container-header {
+      position: relative;
+      height: 70px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      border-bottom: $header-border-style;
+
+
+      .navbar-nav > li > a {
+        color: $text-color;
+      }
+
+      .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+      }
+
+      .navbar-left > li {
+       border-left: $header-border-style;
+       box-shadow: -1px 0px 0px $box-shadow-color;
+     }
+
+     .navbar-right > li {
+       border-right: $header-border-style;
+       box-shadow: 1px 0px 0px $box-shadow-color;
+     }
+
+   }
+
+ }
+
+ #sub-nav {
+  background-color: $subnav-bg-color;
+  position: relative;
+  height: $bottom-rect-height;
+  border-bottom: $header-border-style;
+  z-index: -2;
+  overflow-y: hidden;
+  max-height: 0px;
+  transition-property: all;
+  transition-duration: .25s;
+  transition-timing-function: cubic-bezier(.91,.8,.54,1.39);
+
+  .header-add-on-list {
+    height: 20px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+    li {
+      margin: 0 10px;
+      a {
+        font-size: 12px;
+        text-decoration: none;
+        color: $text-color;
+      }
+      a:not(.first-in-header-add-on-list):before  {
+        content: "•";
+        left: -16px;
+        font-size: 18px;
+        line-height: 0px;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+}
+
+.open {
+  max-height: 40px !important;
+}
+
+li a.widen {
+    // needs to be one less than .container-header height
+    line-height: 69px;
+    padding: 0px 35px;
+    @include transition(background, 0.25s, linear);
+    &:hover {
+      background-color: #525252 !important;
+    }
+  }
+
+}
+/* end of desktop media-query */
+
+
+// #top-rect {
+//   height: $top-rect-height;
+//   background-color: $primary-color;
+//   width: 100%;
+// }
+
+
+// .navbar {
+//   top: 8px;
+// }
+
+
+// -- Spree Custom Header and Footer ---------------------
+// #spree-header {
+//   background: #1c5c92 asset-url('spree_header.jpg') center center;
+//   background-size: cover;
+//   margin-bottom: $line-height-computed;
+//   #header {
+//     background: rgba(9, 22, 33, 0.4);
+//     padding: $line-height-computed 0;
+//   }
+//   #logo {
+//     margin-bottom: 10px;
+//     img {
+//       width: 306px;
+//     }
+//   }
+//   .nav a {
+//     color: #fff;
+//     &:hover {
+//       background:rgba(9, 22, 33, 0.4);
+//     }
+//   }
+//   .navbar {
+//     border: 0;
+//     margin-bottom: 0;
+//   }
+// }
+// #spree-footer {
+//   background: $gray-dark;
+//   padding-top: $padding-base-horizontal;
+//   margin-top: $line-height-computed;
+//   color: #fff;
+// }
