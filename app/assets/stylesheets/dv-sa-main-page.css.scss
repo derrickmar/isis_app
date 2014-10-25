@@ -1,4 +1,4 @@
-$spree-header-height: 71px;
+$spree-header-height: 51px;
 $dv-primary-color: #33A0FF;
 $one-in-four-outline: 2px;
 
@@ -88,7 +88,7 @@ label.message {
 		rgba(255,255,255, 0.9)
 		),
 	image-url("design.jpg") no-repeat 0 0;
-	height: calc(100vh - 71px);
+	height: calc(100vh - 51px);
 	width: auto;
 	background-size: cover;
 	background-attachment: fixed;
@@ -125,8 +125,13 @@ label.message {
 
 // TODO: how to include css only if javascript exists
 .maincause-header {
-	font-size: 18px;
+	font-size: 16px;
 	@include font-styles(300, italic);
+}
+
+.highlight {
+	@include font-styles(700, italic);
+	text-decoration: underline;
 }
 
 .block1-content {
@@ -138,7 +143,7 @@ label.message {
 .maincause-sub-header {
 	display: inline-block;
 	color: black;
-	font-size: 28px;
+	font-size: 18px;
 	@include font-styles(700, italic);
 }
 
@@ -193,7 +198,7 @@ label.message {
 
 .facts-parent {
 	position: relative;
-	height: calc(100vh - 71px);
+	height: calc(100vh - 51px);
 }
 
 #dv-block3 {
@@ -202,15 +207,21 @@ label.message {
 		rgba(255,255,255, 0.8)
 		),
 	image-url("design.jpg") no-repeat 0 0;
-	height: calc(100vh - 71px);
+	height: calc(100vh - 51px);
 	width: 100%;
 	background-size: cover;
 	background-attachment: fixed;
 	position: fixed;
-	top: 69px;
+	top: 51px;
 	//	color: black;
 	z-index: -1;
 	//	top: -100px; // this value is the because of skollr moving #dv-block2
+}
+
+.ashley-design {
+	height: 100px;
+	width: auto;
+	margin-left: 20px;
 }
 
 #dv-block4 {
@@ -368,4 +379,9 @@ label.message {
 		text-align: right;
 		font-size: 32px;
 	}
+}
+
+.footer {
+	color: white;
+	font-size: 14px;
 }
