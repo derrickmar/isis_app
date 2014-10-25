@@ -34,7 +34,7 @@
 				  <% end %>
 
 					<% if flash[:error] %>
-					  <div id="error_explanation">
+					  <div class="alert alert-danger">
 					  	There were some errors: 
 					    <% flash[:error].each do |msg| %>
 					      <span class='error-bullet'>•</span> <%= msg %>
@@ -138,7 +138,7 @@
 				<div class="col-xs-12">
 					<%= image_tag('derrick-circle.png', class: 'team-pics') %>
 					<span class="whatis-desc-header">Derrick Mar</span>
-					<p class="whatis-desc">Web Developer</p>
+					<p class="whatis-desc">Developer</p>
 				</div>
 			</div>
 		</div>
@@ -219,11 +219,15 @@
 	</div>
 
 	<div class="main-cause-blocks" id="dv-block2">
-		<h1 class="main-cause-headers-of-blocks-small"
-			data-anchor-target="#dv-block2"
-			data-bottom-top="opacity: 0.25; top: 0px"
-			data-center-top="opacity: 1; top: 15px;">Interested in launch?</h1>
-		<div class="row whatis-desc-holder">
+		<div class="in-touch">
+			<h1 class="main-cause-headers-of-blocks-small"
+				data-anchor-target="#dv-block2"
+				data-bottom-top="opacity: 0.25; top: 0px"
+				data-center-top="opacity: 1; top: 15px;">Keep in touch</h1>
+				<div class='subheader'> We'll let you know when we launch! Don't worry, we hate spam too :).
+				</div>
+		</div>
+		<div class="row email-form-holder">
 			<div class="dv-whatis-desc col-xs-offset-3 col-xs-6"
 				data-anchor-target="#dv-block2"
 				data-bottom-top="opacity: 0; left: 0px;"
@@ -232,19 +236,7 @@
 					<!-- <span class="whatis-desc-header">Domestic Violence</span> -->
 					<!-- We won't spam you :). We'll only send you one email when we launch! -->
 					<%= form_for @email, url: { action: 'create', controller: "emails" } do |f| %>
-						<% if flash[:success] %>
-					  	 <div class="alert alert-success">
-					  	 	<%= flash[:success] %>
-						   </div>
-					  <% end %>
-
-						<% if flash[:error] %>
-						  <div class="alert alert-error">
-					  	 	<% flash[:error].each do |msg| %>
-					      	• <%= msg %>
-					    	<% end %>
-						  </div>
-						<% end %>
+						
 						<div class='input-group'>
 							<%= f.text_field :name, placeholder: 'Enter your email', class: 'form-control' %>
 							<div class="input-group-btn">

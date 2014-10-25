@@ -110,6 +110,9 @@ label.message {
 		background-color: $dv-primary-color;
 		color: white;
 	}
+	.alert-danger {
+		font-size: 14px;
+	}
 }
 
 .email-btn {
@@ -381,7 +384,21 @@ label.message {
 	}
 }
 
+.in-touch {
+	text-align: center;
+	.subheader {
+		margin-top: 20px;
+		color: white;
+		font-size: 14px;
+	}
+}
+
+.email-form-holder {
+	margin: 25px 0px 40px 0px;
+}
+
 .footer {
 	color: white;
 	font-size: 14px;
+	@include font-styles(300, italic);
 }
