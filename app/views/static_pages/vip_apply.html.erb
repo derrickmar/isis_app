@@ -1,0 +1,86 @@
+<!-- <div id='skrollr-body'> for mobile -->
+<div class="main-cause-holder">
+	<div class="row main-cause-blocks" id="dv-block1">
+			<div class="join-form col-xs-8 col-xs-offset-2"> 
+				<h1 id="vip-join-form-title"> VIP Form </h1>
+				<% if flash[:success] %>
+			  	 <div class="alert alert-success">
+			  	 	<%= flash[:success] %>
+				   </div>
+			  <% end %>
+				<% if flash[:error] %>
+				  <div class="alert alert-danger">
+				  	There were some errors: 
+				    <% flash[:error].each do |msg| %>
+				      <span class='error-bullet'>•</span> <%= msg %>
+				    <% end %>
+				  </div>
+				<% end %>
+			</div>
+			<div class="join-form col-xs-4 col-xs-offset-1"> 
+				<%= form_for @lead, url: { action: 'vip_create', controller: "leads" }, html: { class: "form-horizontal", role: 'form' } do |f| %>
+					<div class="form-group">
+						<%= label_tag(:first_name, "*Name:", class: 'col-xs-2 control-label') %>
+						<div class='col-xs-5'>
+							<%= f.text_field :first_name, placeholder: 'First', class: 'form-control input-group-sm' %>
+						</div>
+						<div class='col-xs-5'>
+							<%= f.text_field :last_name, placeholder: 'Last', class: 'form-control col-sm-5' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:email, "*Email:", class: 'col-xs-2 control-label') %>
+						<div class='col-xs-10'>
+							<%= f.text_field :email, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:phone, "Phone:", class: 'col-xs-2 control-label') %>
+						<div class='col-xs-10'>
+							<%= f.text_field :phone, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:portfolio, "Portfolio:", class: 'col-xs-2 control-label') %>
+						<div class='col-xs-10'>
+							<%= f.text_field :portfolio, class: 'form-control' %>
+						</div>
+					</div>
+					<div class="form-group">
+							<%= label_tag(:lead, "Role:", class: 'col-xs-2 control-label') %>
+						<div class='col-xs-10'>
+							 <select class="form-control" name="lead[role]">
+								  <option value="Graphic Designer" selected="selected">Graphic Designer</option>
+								  <option value="Video Producer">Video Producer</option>
+								  <option value="Photographer">Photographer</option>
+								  <option value="Marketer">Marketer</option>
+								  <option value="Writer">Writer</option>
+							</select>
+						</div>
+					</div>
+		</div>
+			<div class="join-form col-xs-6">
+					<div class="form-group">
+						<%= label_tag(:why_eluci, "Why are you interested in Eluci?", class: 'col-xs-3 control-label') %>
+							<div class='col-xs-9'>
+								<%= f.text_area :why_eluci, class: 'form-control ', rows:"4" %></br>
+							</div>
+					</div>
+					<div class="form-group">
+						<%= label_tag(:lead, "Additional Comments:", class: 'col-xs-3 control-label') %>
+							<div class='col-xs-9'>
+								<%= f.text_area :additional_comments, class: 'form-control ', rows:"4" %></br>
+							</div>
+					</div>
+		</div>
+		<div class="join-form col-xs-10">
+			<div class="form-group">
+				 <div class="col-xs-offset-2 col-xs-10">
+						<%= image_tag 'ajax-loader2.gif', class: 'loading-gif-join hidden' %>
+						<%= f.submit "Go!", class: 'btn btn-default vip-join-btn col-xs-12' %>
+					</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

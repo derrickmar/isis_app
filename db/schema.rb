@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025072849) do
+ActiveRecord::Schema.define(version: 20141030063726) do
 
   create_table "emails", force: true do |t|
-    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(version: 20141025072849) do
     t.string   "last_name"
     t.string   "email"
     t.string   "phone"
-    t.text     "notes"
-    t.string   "focus"
+    t.text     "additional_comments"
+    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "portfolio"
+    t.text     "why_eluci"
   end
 
 end

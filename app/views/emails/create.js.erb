@@ -1,0 +1,14 @@
+if (<%= @email.valid? %>) {
+	$('.email-input').val("");
+	$('.alert-success-email').text("");
+	$('.alert-success-email').append("Thank you for your interest!");
+	$('.alert-danger-email').addClass('hidden');
+	$('.alert-success-email').removeClass('hidden');
+} else {
+	$('.alert-danger-email').text("");
+	<% @errors.each do |msg| %>
+		$('.alert-danger-email').append("<span class='error-bullet'>•</span> <%= j msg %>");
+	<% end %>
+	$('.alert-danger-email').removeClass('hidden');
+	$('.alert-success-email').addClass('hidden');
+}

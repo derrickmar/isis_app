@@ -19,6 +19,10 @@ $one-in-four-outline: 2px;
 	margin: 0;
 }
 
+.overflow {
+	overflow: visible;
+}
+
 .main-cause-holder {
 	@include font-styles(300, normal);
 	color: $dv-primary-color;
@@ -50,6 +54,18 @@ $one-in-four-outline: 2px;
 	display: inline-block;
 	vertical-align: middle;
 	float: none;
+}
+
+.loading-gif {
+	height: 30px;
+	width: auto;
+}
+
+.loading-gif-join {
+	height: 30px;
+	width: auto;
+	position: absolute;
+	left: -20px;
 }
 
 //============= ERROR STYLES
@@ -94,10 +110,10 @@ label.message {
 	background-attachment: fixed;
 }
 
-.eluci-info-holder {
-	opacity: 0;
-	@include transition(opacity, 1000ms, ease);
-}
+//.eluci-info-holder {
+//	opacity: 0;
+//	@include transition(opacity, 1000ms, ease);
+//}
 
 
 
