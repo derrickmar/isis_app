@@ -1,96 +1,26 @@
 <!-- <div id='skrollr-body'> for mobile -->
+
 <div class="main-cause-holder">
-	<div class="row main-cause-blocks" id="dv-block1"
-	 		data-top="background-position: 0px 0px"
-      data-bottom-top="background-position: 0px 200px">
-		<div class="block1-content"
-			data-anchor-target="#dv-block1"
-			data-top="opacity: 1; left: 0px;"
-			data--300-top="opacity: 0; left: 20px;">
-			<div class="eluci-info-holder col-xs-5"> 
-				<span class="maincause-sub-header">What is Eluci?</span>
-				<div class="maincause-sub-header-underline"></div>
-				<p class="maincause-header">
-					Eluci is a non-profit initiative that aims to transform the way people think about the clothes they purchase and wear. We are using compelling <span class='highlight'>design on apparel</span>, to raise awareness and funding for causes that need more attention.
-				</p>
-				<span class="maincause-sub-header">The only non-profit apparel company</span>
-				<div class="maincause-sub-header-underline"></div>
-				<p class="maincause-header">
-					There's thousands of for-profit 'social enterprises' that sell apparel. What make us different? We are the only non-profit that creates apparel for the pure purpose of solving underrepresented issues that will make a difference in all Americans.  <span class='highlight'>100% of everything gets reinvested back into the mission.</span> No if’s no but’s. That's why we worked so hard to receive 501c3 status.
-				</p>
-				<span class="maincause-sub-header">How it works</span>
-				<div class="maincause-sub-header-underline"></div>
-				<p class="maincause-header">
-					Every 3 months, we will roll out new campaign focusing on one cause (starting with Domestic Violence and Sexual Assault when we launch). When a supporter makes a donation and recieves a t-shirt 50% of the profits will go towards the supporters charity of choice. The other 50% will be donated back to our foundation to support our mission. Our team is just a group of unpaid volunteers passionate about making a difference in the world.
-				</p>
-			</div>
-			<div class="join-form col-xs-6 col-xs-offset-1"> 
-				<div>
-					<h3 id="join-form-title"> Join our team! </h3>
-				</div>
-				<%= form_for @lead, url: { action: 'create', controller: "leads" }, html: { class: "form-horizontal lead-form", role: 'form' } do |f| %>
-					 <% if flash[:success] %>
-				  	 <div class="alert alert-success">
-				  	 	<%= flash[:success] %>
-					   </div>
-				  <% end %>
+	<div class="row main-cause-blocks">
+		<div class="col-xs-8 col-xs-offset-2 concept">
+			<h1> The concept </h1>
 
-					<% if flash[:error] %>
-					  <div class="alert alert-danger">
-					  	There were some errors: 
-					    <% flash[:error].each do |msg| %>
-					      <span class='error-bullet'>•</span> <%= msg %>
-					    <% end %>
-					  </div>
-					<% end %>
+			The aim of ISIS is to create an Islamic state across Sunni areas of Iraq and in Syria. ISIS is violently conquering countries due to the ideology of creating so-called "Islamic State." The idea of this app is to satirize the fact that it is ridiculous and cruel to brutally murder thousands of innocent civilians to take over territory.
+			</br>
+			</br>
+			This idea can also be applied to something more deep and resonating rather than satirizing. For example, if you conquer a state, we can create an emotional story of what brutality was needed in order to conquer it (e.g. your best friend dying, maybe even a automatically generated video displaying the brutality of conquering that country). Then you can relate it back to ISIS. There’s a bunch of way you can go about this idea!
+			</br>
+			</br>
+			P.S. Only California works. This app is just proof of concept :).
+		</div>
+	</div>
 
-					<div class="form-group">
-						<%= label_tag(:first_name, "Name:", class: 'col-xs-2 control-label') %>
-						<div class='col-xs-5'>
-							<%= f.text_field :first_name, placeholder: 'First', class: 'form-control input-group-sm' %>
-						</div>
-						<div class='col-xs-5'>
-							<%= f.text_field :last_name, placeholder: 'Last', class: 'form-control col-sm-5' %>
-						</div>
-					</div>
-					<div class="form-group">
-						<%= label_tag(:email, "Email:", class: 'col-xs-2 control-label') %>
-						<div class='col-xs-10'>
-							<%= f.text_field :email, class: 'form-control' %>
-						</div>
-					</div>
-					<div class="form-group">
-						<%= label_tag(:phone, "Phone:", class: 'col-xs-2 control-label') %>
-						<div class='col-xs-10'>
-							<%= f.text_field :phone, class: 'form-control' %>
-						</div>
-					</div>
-					<div class="form-group">
-							<%= label_tag(:lead, "Role:", class: 'col-xs-2 control-label') %>
-						<div class='col-xs-10'>
-							 <select class="form-control" name="lead[role]">
-								  <option value="Graphic Designer" selected="selected">Graphic Designer</option>
-								  <option value="Video Producer">Video Producer</option>
-								  <option value="Photographer">Photographer</option>
-								  <option value="Marketer">Marketer</option>
-								  <option value="Writer">Writer</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<%= label_tag(:lead, "Comments:", class: 'col-xs-2 control-label') %>
-							<div class='col-xs-10'>
-								<%= f.text_area :additional_comments, class: 'form-control ', rows:"3" %></br>
-							</div>
-					</div>
-					<div class="form-group">
-						 <div class="col-xs-offset-2 col-xs-10 overflow">
-								<%= image_tag 'ajax-loader2.gif', class: 'loading-gif-join hidden' %>
-								<%= f.submit "Go!", class: 'btn btn-default lead-btn col-xs-12' %>
-							</div>
-					</div>
-				<% end %>
-
+	<div class="row main-cause-blocks" id="dv-block1">
+		<div class="block1-content">
+			<div class="eluci-info-holder col-xs-12"> 
+				<span class="maincause-sub-header">Choose your state to counquer</span>
+				<div class="col-xs-3">
+					<%= image_tag "california.png", class: "state" %>
 			</div>
 		</div>
 	</div>
@@ -102,7 +32,7 @@
 		<h1 class="main-cause-headers-of-blocks-small"
 			data-anchor-target="#dv-block2"
 			data-bottom-top="opacity: 0.25; top: 0px"
-			data-center-top="opacity: 1; top: 15px;">The Team</h1>
+			data-center-top="opacity: 1; top: 15px;">Choose you state to conquer</h1>
 
 		<div class="row whatis-desc-holder">
 			<div class="dv-whatis-desc col-xs-12 col-lg-3"
@@ -110,9 +40,8 @@
 				data-bottom-top="opacity: 0;"
 				data-center-top="opacity: 1;">
 				<div class="col-xs-12">
-					<%= image_tag('ashley-circle.png', class: 'team-pics') %>
-					<span class="whatis-desc-header">Ashley Hirasuna</span>
-					<p class="whatis-desc">Designer</p>
+					<%= image_tag('california.png', class: 'state') %>
+					<span class="whatis-desc-header">California</span>
 				</div>
 			</div>
 			<div class="dv-whatis-desc col-xs-12 col-lg-3"
@@ -120,9 +49,8 @@
 				data-bottom-top="opacity: 0;"
 				data-center-top="opacity: 1;">
 				<div class="col-xs-12">
-					<%= image_tag('apollo-circle.png', class: 'team-pics') %>
-					<span class="whatis-desc-header">Apollo Jain</span>
-					<p class="whatis-desc">Outreach Coordinator</p>
+					<%= image_tag('florida.png', class: 'state') %>
+					<span class="whatis-desc-header">Florida</span>
 				</div>
 			</div>
 			<div class="dv-whatis-desc col-xs-12 col-lg-3"
@@ -130,9 +58,8 @@
 				data-bottom-top="opacity: 0;"
 				data-center-top="opacity: 1;">
 				<div class="col-xs-12">
-					<%= image_tag('vishnu-circle.png', class: 'team-pics') %>
-					<span class="whatis-desc-header">Vishnu Murthy</span>
-					<p class="whatis-desc">Outreach Coordinator</p>
+					<%= image_tag('georgia.png', class: 'state') %>
+					<span class="whatis-desc-header">Georgia</span>
 				</div>
 			</div>
 			<div class="dv-whatis-desc col-xs-12 col-lg-3"
@@ -140,129 +67,21 @@
 				data-bottom-top="opacity: 0;"
 				data-center-top="opacity: 1;">
 				<div class="col-xs-12">
-					<%= image_tag('derrick-circle.png', class: 'team-pics') %>
-					<span class="whatis-desc-header">Derrick Mar</span>
-					<p class="whatis-desc">Developer</p>
+					<%= image_tag('texas.png', class: 'state') %>
+					<span class="whatis-desc-header">Texas</span>
 				</div>
 			</div>
 		</div>
 
-		<div class="row whatis-desc-holder">
-			<div class="dv-whatis-desc col-xs-12 col-lg-3"
-				data-anchor-target="#dv-block2"
-				data-bottom-top="opacity: 0;"
-				data-center-top="opacity: 1;">
-				<div class="col-xs-12">
-					<%= image_tag('angelica-kim.png', class: 'team-pics') %>
-					<span class="whatis-desc-header">Angelica Kim</span>
-					<p class="whatis-desc">Designer</p>
-				</div>
-			</div>
-			<div class="dv-whatis-desc col-xs-12 col-lg-3"
-				data-anchor-target="#dv-block2"
-				data-bottom-top="opacity: 0;"
-				data-center-top="opacity: 1;">
-				<div class="col-xs-12">
-					<%= image_tag('paul-jeon.png', class: 'team-pics') %>
-					<span class="whatis-desc-header longer">Paul Jeon</span>
-					<p class="whatis-desc">Designer</p>
-				</div>
-			</div>
-			<div class="dv-whatis-desc col-xs-12 col-lg-3"
-				data-anchor-target="#dv-block2"
-				data-bottom-top="opacity: 0;"
-				data-center-top="opacity: 1;">
-				<div class="col-xs-12">
-					<%= image_tag('veronica_chen.png', class: 'team-pics') %>
-					<span class="whatis-desc-header">Veronica Chen</span>
-					<p class="whatis-desc">Designer</p>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- data-bottom-top="top: -50px;"
-			data-top="top: -108px;" -->
-	<div class="facts-parent">
-		<div class="main-cause-blocks" id="dv-block3"> </div>
-		<div class="main-cause-blocks" id="dv-block4">
-			<h1 class="main-cause-headers-of-blocks-large header-facts"
-				data-bottom-top="opacity: 0;"
-				data-center-top="opacity: 1;"
-			>Our Story</h1>
-			<div class="facts-holder">
-				<div class="facts-row row">
-					<div class="col-xs-offset-1 col-xs-10 vcenter"
-		  			 	data-bottom-top="opacity: 0; transform: scale(0.5);"
-							data-center-top="opacity: 1; transform: scale(1);">
-						<div>
-							<span class='big-date'>June 2, 2014:</span>
-							Eluci is born!!
-						</div>
-					</div>
-				</div>
-				<div class="facts-row row">
-					<div class="col-xs-offset-1 col-xs-10 vcenter"
-		  			 	data-bottom-top="opacity: 0; transform: scale(0.5);"
-							data-center-top="opacity: 1; transform: scale(1);">
-						<div>
-							<span class='big-date'>July 15, 2014:</span>
-							Eluci wins <span class="facts-highlight"> $1500 </span> grant from GM to pursue project
-						</div>
-					</div>
-				</div>
-				<div class="facts-row row">
-					<div class="col-xs-offset-1 col-xs-10 vcenter"
-		  			 	data-bottom-top="opacity: 0; transform: scale(0.5);"
-							data-center-top="opacity: 1; transform: scale(1);">
-						<div>
-							<span class='big-date'>August 22, 2014:</span>
-							<span class="facts-highlight"> Ashley </span> creates our first design!
-							<%= image_tag('sexual-assault.jpg', class: 'ashley-design') %>
-						</div>
-					</div>
-				</div>
-				<div class="facts-row row">
-					<div class="col-xs-offset-1 col-xs-10 vcenter"
-		  			 	data-bottom-top="opacity: 0; transform: scale(0.5);"
-							data-center-top="opacity: 1; transform: scale(1);">
-						<div>
-							<span class='big-date'>October 24, 2014:</span>
-							Eluci in talks with <span class="facts-highlight"> <%= link_to('Social Good Fund', 'http://www.socialgoodfund.org', target: "_blank") %> </span> to receive 501c(3) status through fiscal sponsorship.
-						</div>
-					</div>
-				</div>
-				<div class="facts-row row">
-					<div class="col-xs-offset-1 col-xs-10 vcenter"
-		  			 	data-bottom-top="opacity: 0; transform: scale(0.5);"
-							data-center-top="opacity: 1; transform: scale(1);">
-						<div class='today-timeline'>
-							<span class='big-date'>TODAY!! -> </span>
-							We need your help to create more designs that will be worn by thousands of supports across the nation! <span class="facts-highlight join-scroll"> Join our team now </span>
-						</div>
-					</div>
-				</div>
-				<div class="facts-row row">
-					<div class="col-xs-offset-1 col-xs-10 vcenter"
-		  			 	data-bottom-top="opacity: 0; transform: scale(0.5);"
-							data-center-top="opacity: 1; transform: scale(1);">
-						<div>
-							<span class='big-date'>November 30, 2014:</span>
-							Planned launch date via Kickstarter and UC Berkeley event!
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
 
 	<div class="main-cause-blocks" id="dv-block2">
 		<div class="in-touch">
 			<h1 class="main-cause-headers-of-blocks-small"
 				data-anchor-target="#dv-block2"
 				data-bottom-top="opacity: 0.25; top: 0px"
-				data-center-top="opacity: 1; top: 15px;">Keep in touch</h1>
-				<div class='subheader'> We'll let you know when we launch! Don't worry, we hate spam too :).
-				</div>
+				data-center-top="opacity: 1; top: 15px;">See what the ideology was to counquer</h1>
 		</div>
 		<div class="row email-form-holder">
 			<div class="dv-whatis-desc col-xs-offset-3 col-xs-6"
@@ -270,15 +89,11 @@
 				data-bottom-top="opacity: 0; left: 0px;"
 				data-center-top="opacity: 1; left: 20px;">
 				<div class="col-xs-12">
-					 <div class="alert alert-success alert-success-email hidden">
-					  </div>
-					  <div class="alert alert-danger alert-danger-email hidden">
-					  </div>
 					<!-- <span class="whatis-desc-header">Domestic Violence</span> -->
 					<!-- We won't spam you :). We'll only send you one email when we launch! -->
 					<%= form_for @email, url: { action: 'create', controller: "emails" }, html: { class: 'email-form' }, remote: true do |f| %>
 						<div class='input-group'>
-							<%= f.text_field :email, placeholder: 'Enter your email', class: 'form-control email-input' %>
+							<%= f.text_field :email, placeholder: 'Enter why you want the state', class: 'form-control email-input' %>
 							<div class="input-group-btn">
 								<%= f.submit "Go!",  class: 'btn btn-default email-btn' %>
 			  			</div>
@@ -286,14 +101,11 @@
 					<% end %>
 				</div>
 			</div>
-			<%= image_tag 'ajax-loader2.gif', class: 'loading-gif hidden' %>
 		</div>
 
 		<div class="row footer">
-			<div class="dv-whatis-desc col-xs-offset-3 col-xs-6">
-				Email: eluci.contact@gmail.com •
-				Phone: (626)-622-6725 •
-				Made with <span class="glyphicon glyphicon-heart"></span> by Derrick Mar
+			<div class="dv-whatis-desc col-xs-offset-3 col-xs-6 answer">
+				
 			</div>
 		</div>
 	</div>

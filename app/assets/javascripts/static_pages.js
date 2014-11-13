@@ -10,6 +10,14 @@
         // });
         // $('.eluci-info-holder').css('opacity', 1);
 
+        $('.state').on('click', function () {
+            $(this).css('opacity', '0.6');
+        });
+
+        $('.email-btn').on('click', function () {
+            $(".answer").text("You conquered California and beheaded 1,000 people! Just because California has good weather!");
+        });
+
         $(document).on("ajax:beforeSend", ".email-form", function() {
             console.log('running!');
             $(".loading-gif").removeClass('hidden');
@@ -23,6 +31,7 @@
         $('.lead-btn, .vip-join-btn').on("click", function() {
             $('.loading-gif-join').removeClass('hidden');
         });
+
 
         // $(document).on("ajax:beforeSend", ".lead-form", function() {
         //     $(".loading-gif-join").removeClass('hidden');

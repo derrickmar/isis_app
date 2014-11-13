@@ -15,11 +15,24 @@ body {
 	font-size: 18px;
 }
 
+.concept {
+	text-align: center;
+}
+
 h1 {
 	font-size: 26px;
 	text-align: center;
 	line-height: 1.5;
 	margin: 0;
+}
+
+.state {
+	height: 250px;
+	width: auto;
+	&:hover {
+		opacity: 0.6;
+		cursor: pointer;
+	}
 }
 
 .container-fluid {
